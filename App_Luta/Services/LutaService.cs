@@ -25,13 +25,10 @@ namespace App_Luta.Services
             List<Lutador> integrantes_torneio = s_lutadores.Where(o => IdLutadores.Contains(o.Id)).OrderBy(o => o.Idade).ToList();
             while (integrantes_torneio.Count > 1)
             {
-                for (int i = 0; i < integrantes_torneio.Count; i++)
+                for (int i = 0; i < integrantes_torneio.Count - 1; i++)
                 {
                     int IdxProximoLutador = i + 1;
-                    if (IdxProximoLutador < integrantes_torneio.Count)
-                    {
-                        integrantes_torneio[i].IniciarLuta(integrantes_torneio[IdxProximoLutador], integrantes_torneio);
-                    }
+                    integrantes_torneio[i].IniciarLuta(integrantes_torneio[IdxProximoLutador], integrantes_torneio);
                 }
             }
             return integrantes_torneio.FirstOrDefault(o => o.IsPerdedor == false);
