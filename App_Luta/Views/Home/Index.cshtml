@@ -45,7 +45,7 @@
             document.querySelector('#btn_iniciar_luta').addEventListener('click', IniciarLuta);
             function IniciarLuta(event) {
                 const QuantidadePorTorneio = @ViewBag.QuantidadeTorneio;
-                const LutadoresSelecionados = document.querySelectorAll('input[type="checkbox"]:checked');
+                const HLutadoresSelecionados = document.querySelectorAll('input[type="checkbox"]:checked');
                 const IdLutadoresSelecionados = new Array();
                 HLutadoresSelecionados.forEach((item) => {
                     IdLutadoresSelecionados.push(Number(item.value));
